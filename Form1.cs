@@ -23,6 +23,7 @@ namespace WinFormsApp2
 
             Application.DoEvents();
             gs = File.ReadAllText(fname);
+            gs = gs.Replace("\\", "\\\\");
             gs = gs.Replace("\0", "\\0");
             gs = gs.Replace("   ", "\\t");
             gs = gs.Replace("\n", "\\n");
@@ -32,6 +33,11 @@ namespace WinFormsApp2
             gs = gs + "";
             textBox1.Text =gs;
             button1.Text = "open resource";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
